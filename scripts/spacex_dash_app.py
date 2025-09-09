@@ -8,11 +8,18 @@ import os, sqlite3
 
 # ---------- Data loading ----------
 def load_data():
-    for csv_name in ["spacex.csv", "dataset.csv", "SpaceX.csv"]:
+    candidates = [
+        "spacex.csv", "dataset.csv", "SpaceX.csv",
+        "data/spacex.csv", "data/dataset.csv", "data/SpaceX.csv"
+    ]
+    for csv_name in candidates:
         if os.path.exists(csv_name):
             return pd.read_csv(csv_name)
     if os.path.exists("spacex.sqlite"):
         with sqlite3.connect("spacex.sqlite") as con:
+            return pd.read_sql("SELECT * FROM spacex", con)
+    if os.path.exists("data/spacex.sqlite"):
+        with sqlite3.connect("data/spacex.sqlite") as con:
             return pd.read_sql("SELECT * FROM spacex", con)
     raise FileNotFoundError("Provide spacex.csv (preferred) or spacex.sqlite with table 'spacex'.")
 
