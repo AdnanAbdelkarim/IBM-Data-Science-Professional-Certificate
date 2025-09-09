@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+.env
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+.DS_Store
+._*
+Thumbs.db
+__MACOSX/
+*.zip
+*.tar.gz
+*.7z
+data/raw/
