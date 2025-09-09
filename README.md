@@ -25,7 +25,7 @@ applied-data-science-capstone/
 │
 ├── images/                    # Static images used in README / notebook
 │   ├── folium_map.png
-│   └── dashboard_scatter.png
+│   └── dashboard.png
 │
 ├── requirements.txt
 └── README.md
